@@ -1,0 +1,79 @@
+#iphonedetail, #l1, #l2, #l3, #l4, #l5, #l6, #l7, #l8, #l9, #l10,#p1, #p2, #p3, #p4, #p5, #p6, #p7, #p8, #p9, #p10
+{
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+.content img
+{
+    width: 232.3px;
+    padding-top: 30px;
+}
+.content
+{
+    margin-top: 0px;
+    width: 600px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 10px;
+}
+#detail{
+ display: flex;
+ flex-direction: row;
+ gap: 40px;
+ justify-content: center;
+ margin-bottom: 30px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: auto;
+    border-radius: 10px;
+  }
+td, th {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+  }
+.content button
+{
+    margin-top: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    padding: 20px 50px ;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+.price
+{
+    text-align: center;
+    color:#f42424;
+    font-weight: bold;
+    margin-top:10px;
+}
+h2
+{
+    position: relative;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    padding-bottom: 5px;
+}
+h2 span
+{
+    position: absolute;
+    border: 1px solid rgb(202, 202, 202);
+    right: 20px;
+    font-size: smaller;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 6px;
+}

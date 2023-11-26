@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>HOPETECH</title>
+      <link rel="stylesheet" href="PRODUCT1.css">
+      <link rel="stylesheet" href="MENU.css">
+      <link rel="stylesheet" href="SEARCH.css">
+      <link rel="stylesheet" href="Particular.css">
+      <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link rel="stylesheet" href="cart.css">
+      <script src="cart.js"></script>
+      <script src="Particular.js"></script>
+      <script src="SEARCH.js"></script>
+      <script src="PRODUCT1.js"></script>
+      <style>
+         /* CSS để thiết lập kiểu cho phần chỉnh sửa */
+         #productDetails {
+         /* Điều chỉnh kiểu theo ý muốn của bạn */
+         background-color: #f2f2f2;
+         padding: 10px;
+         }
+      </style>
+      <style>
+        /* Add your existing styles here */
+
+        #chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: green;
+            border-radius: 50%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        #chat-box {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #chat-box.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        #chat-header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #chat-body {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        #chat-input {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        #user-message {
+            flex: 1;
+            margin-right: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #send-button {
+            background-color: #4c86af;
+            color: #fff;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+<style>
+        #chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: green;
+            border-radius: 50%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        #chat-box {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #chat-box.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        #chat-header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #chat-body {
+            flex: 1;
+            padding: 10px;
+            overflow-y: scroll;
+            height: 200px;
+        }
+
+        #chat-input {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        #user-message {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #send-button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .message {
+            animation: fadeIn 0.5s ease;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .avatar {
+            width: 30px; /* Đặt kích thước mong muốn cho avatar */
+            height: 30px; /* Đặt kích thước mong muốn cho avatar */
+            border-radius: 50%; /* Chuyển hình dạng thành hình tròn */
+            margin-right: 10px;
+        }
+        .system-message {
+            color: #4CAF50;
+        }
+
+        .timestamp {
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+   </head>
+   <body>
+
+    <div id="cart">
+        <div id="cart-box">
+            <div class="pd" id="pd1">
+                <img src="https://www.pngmart.com/files/15/Apple-iPhone-12-PNG-HD.png" alt="">
+                <div class="info">
+                    <p class="info-name">Iphone 15 256gb</p>
+                    <p class="info-price" id="price1">$1399</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd1')"class="up"></button>
+                <input type="text" class="value" id="value1"></input>
+                <button onclick="down('pd1')"class="down"></button>
+                </div>
+            </div>
+            
+            <div class="pd" id="pd2">
+                <img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2021/09/15/image-removebg-preview-23.png" alt="">
+                <div class="info">
+                    <p class="info-name">Ipad mini 6 Wifi 64 GB</p>
+                    <p class="info-price" id="price2">$699</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd2')"class="up"></button>
+                <input type="text" class="value" id="value2"></input>
+                <button onclick="down('pd2')"class="down"></button>
+                </div>
+            </div>
+            
+            <div class="pd" id="pd3">
+                <img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2023/06/06/mba15-silver-1.png" alt="">
+                <div class="info">
+                    <p class="info-name">MacBook Air 15'' M2</p>
+                    <p class="info-price" id="price3">$2199</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd3')"class="up"></button>
+                <input type="text" class="value" id="value3"></input>
+                <button onclick="down('pd3')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd4">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/1/_/1_74_10.png" alt="">
+                <div class="info">
+                    <p class="info-name">MacBook Air 13'' M2</p>
+                    <p class="info-price" id="price4">$1999</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd4')"class="up"></button>
+                <input type="text" class="value" id="value4"></input>
+                <button onclick="down('pd4')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd5">
+                <img src="https://cdn.hoanghamobile.com/i/preview/Uploads/2022/09/09/image-removebg-preview-10.png" alt="">
+                <div class="info">
+                    <p class="info-name">AirPods 3 2022</p>
+                    <p class="info-price" id="price5">$399</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd5')"class="up"></button>
+                <input type="text" class="value" id="value5"></input>
+                <button onclick="down('pd5')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd6">
+                <img src="https://product.hstatic.net/200000348419/product/apple_magic_trackpad_black_2022_mmmp3_0_fefbe60e3c484e2fb2b37228159c55d6_grande.png" alt="">
+                <div class="info">
+                    <p class="info-name">Magic Trackpad 2 2022</p>
+                    <p class="info-price" id="price6">$199</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd6')"class="up"></button>
+                <input type="text" class="value" id="value6"></input>
+                <button onclick="down('pd6')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd7">
+                <img src="https://cdn.hoanghamobile.com/i/preview/Uploads/2020/10/27/image-removebg-preview%20(30).png" alt="">
+                <div class="info">
+                    <p class="info-name">AirPods 2</p>
+                    <p class="info-price" id="price7">$149</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd7')"class="up"></button>
+                <input type="text" class="value" id="value7"></input>
+                <button onclick="down('pd7')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd8">
+                <img src="https://product.hstatic.net/200000348419/product/apple_magic_mouse_2022_black_mmmq3_0_a825b7a6966b4a158d7e11222d6fab0b.png" alt="">
+                <div class="info">
+                    <p class="info-name">Magic Mouse 2 2022</p>
+                    <p class="info-price" id="price8">$299</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd8')"class="up"></button>
+                <input type="text" class="value" id="value8"></input>
+                <button onclick="down('pd8')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd9">
+                <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/i/p/ipad-pro-13-select-202210_4_1.png" alt="">
+                <div class="info">
+                    <p class="info-name">Ipad Pro 11'' 2022 M2 128 GB</p>
+                    <p class="info-price" id="price9">$999</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd9')"class="up"></button>
+                <input type="text" class="value" id="value9"></input>
+                <button onclick="down('pd9')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd10">
+                <img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2022/03/10/apple-ipad-air-m1-10-9-2022-8.png" alt="">
+                <div class="info">
+                    <p class="info-name">Ipad Air 5 10.9'' 2022 64 GB</p>
+                    <p class="info-price" id="price10">$899</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd10')"class="up"></button>
+                <input type="text" class="value" id="value10"></input>
+                <button onclick="down('pd10')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd11">
+                <img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2023/02/28/mabookpro14-gray-1.png" alt="">
+                <div class="info">
+                    <p class="info-name">MacBook Pro 14'' M2</p>
+                    <p class="info-price" id="price11">$1999</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd11')"class="up"></button>
+                <input type="text" class="value" id="value11"></input>
+                <button onclick="down('pd11')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd12">
+                <img src="data:image/jpeg;base64,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" alt="">
+                <div class="info">
+                    <p class="info-name">MacBook Air 13'' M1</p>
+                    <p class="info-price" id="price12">$1199</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd12')"class="up"></button>
+                <input type="text" class="value" id="value12"></input>
+                <button onclick="down('pd12')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd13">
+                <img src="https://cdn0718.cdn4s.com/media/phụ%20kiện/airpod-pro.png" alt="">
+                <div class="info">
+                    <p class="info-name">AirPods Pro 2022</p>
+                    <p class="info-price" id="price13">$299</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd13')"class="up"></button>
+                <input type="text" class="value" id="value13"></input>
+                <button onclick="down('pd13')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd14">
+                <img src="https://nhistore.com.vn/wp-content/uploads/2022/09/iphone-14-pro-max-tim-nhistore.png" alt="">
+                <div class="info">
+                    <p class="info-name">Iphone 14 Pro Max 128 GB</p>
+                    <p class="info-price" id="price14">$1399</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd14')"class="up"></button>
+                <input type="text" class="value" id="value14"></input>
+                <button onclick="down('pd14')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd15">
+                <img src="https://product.hstatic.net/200000348419/product/clear_case_magsafe_iphone_15_plus_0_53b0604368ed4ea8946410b5f7957948_master.png" alt="">
+                <div class="info">
+                    <p class="info-name">Iphone 15 Plus Case MagSafe</p>
+                    <p class="info-price" id="price15">$149</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd15')"class="up"></button>
+                <input type="text" class="value" id="value15"></input>
+                <button onclick="down('pd15')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd16">
+                <img src="https://product.hstatic.net/200000348419/product/apple_usb_c_to_lightning_cable_1m_mm0a3_0_38904dc998864fc4b250e3e63d5dae33_master.png" alt="">
+                <div class="info">
+                    <p class="info-name">USB-C to Lightning Apple Cable</p>
+                    <p class="info-price" id="price16">$49</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd16')"class="up"></button>
+                <input type="text" class="value" id="value16"></input>
+                <button onclick="down('pd16')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd17">
+                <img src="https://product.hstatic.net/200000348419/product/macbook_pro_m2_13_inch_silver_0_1e499457d47948118e89117da7560f40_master.png" alt="">
+                <div class="info">
+                    <p class="info-name">MacBook Pro 13'' M2</p>
+                    <p class="info-price" id="price17">$1699</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd17')"class="up"></button>
+                <input type="text" class="value" id="value17"></input>
+                <button onclick="down('pd17')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd18">
+                <img src="https://product.hstatic.net/200000348419/product/apple_airtag_0_6e56ae5ee6454f86818533f4675a0d01.png" alt="">
+                <div class="info">
+                    <p class="info-name">AirTag</p>
+                    <p class="info-price" id="price18">$69</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd18')"class="up"></button>
+                <input type="text" class="value" id="value18"></input>
+                <button onclick="down('pd18')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd19">
+                <img src="https://product.hstatic.net/1000300544/product/iphone-13-pro-max-blue-select_cda22afa40c24975bdc2cd6075ef2124.png" alt="">
+                <div class="info">
+                    <p class="info-name">Iphone 13 Pro Max 256 GB</p>
+                    <p class="info-price" id="price19">$999</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd19')"class="up"></button>
+                <input type="text" class="value" id="value19"></input>
+                <button onclick="down('pd19')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd20">
+                <img src="data:image/png;base64,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" alt="">
+                <div class="info">
+                    <p class="info-name">Magic Keyboard 2022 Full</p>
+                    <p class="info-price" id="price20">$299</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd20')"class="up"></button>
+                <input type="text" class="value" id="value20"></input>
+                <button onclick="down('pd20')"class="down"></button>
+                </div>
+            </div>
+            <div class="pd" id="pd21">
+                <img src="https://shopdunk.com/images/thumbs/0001395_sac-20w-usb-c-power-adapter.png" alt="">
+                <div class="info">
+                    <p class="info-name">Apple Power Adapter 20W Type-C</p>
+                    <p class="info-price" id="price21">$29</p>
+                </div>
+                <div class="value-adjust">
+                <button onclick="up('pd21')"class="up"></button>
+                <input type="text" class="value" id="value21"></input>
+                <button onclick="down('pd21')"class="down"></button>
+                </div>
+            </div>
+            <div id="pay">
+                <a href="https://courses.ctda.hcmus.edu.vn/user/profile.php?id=4769">
+                    <button onclick="alert('Vui lòng gặp thầy TRẦN QUỐC HUY')">Pay </button>
+                </a>
+            </div>
+            <div id="sum">
+                <div>Total money</div>
+                <div id="money"></div>
+            </div>
+        </div>
+    </div>
+
+      <div id="below">
+         <nav>
+            <div>
+               <a href="index.html"><img src="ima/logo-hope.svg" class="LOGO" alt="Logo"></a>
+            </div>
+            <ul>
+               <li><a href="ABOUTUS.html">ABOUT US</a></li>
+               <li>
+                    <a onclick="showCart()" style="cursor: pointer;">
+                        <i class='bx bx-cart bx-md'></i>
+                    </a>
+               </li>
+               <li>
+                  <a href="login2.html">
+                  <img style="width: 25px; height: 25px; color: var(--color);" src="ima/logo-account.svg" alt="Avatar" class="avatar">
+                  </a>
+               </li>
+            </ul>
+         </nav>
+         <div id="m-search">
+            <div id="m-search-bar">
+                <input id="m-search-input" type="text" placeholder="What are you looking for?" onclick="resultShow()">
+                <button id="m-search-button" onclick="searchshow()">
+                    <img src="ima\search.svg" alt="">
+                </button>
+            </div>
+            <div id="m-back-box" style="z-index: 998;" onclick="searchHide()"></div>
+            <div id="m-result-menu" style="z-index: 999;">
+                <div id="m-result1"></div>
+                <div id="m-result2"></div>
+                <div id="m-result3"></div>
+                <div id="m-noresult"><p>No result found!</p></div>
+            </div>
+        </div>
+         <div id="product-h2">
+            <h2>PRODUCTS</h2>
+         </div>
+         <div id="menu">
+            <ul>
+               <li id="allbutton"><a href="#" onclick="allShow()">ALL</a></li>
+               <li><a href="#" onclick="iphoneShow()">IPHONE</a></li>
+               <li><a href="#" onclick="macbookShow()">MACBOOK</a></li>
+               <li><a href="#" onclick="ipadShow()">IPAD</a></li>
+               <li><a href="#" onclick="airpodShow()">AIRPOD</a></li>
+               <li><a href="#" onclick="accessoryShow()">ACCESSORY</a></li>
+            </ul>
+         </div>
+         <div id="wp-products">
+            <ul id="list-products">
+               <a class="iphone">
+                  <div class="item" onclick="show('iphonedetail');">
+                     <img src="https://cdn.hoanghamobile.com/i/preview/Uploads/2023/09/13/iphone-15-pro-max-blue-titanium-pure-back-iphone-15-pro-max-blue-titanium-pure-front-2up-screen-usen.png" alt="">
+                     <div class="name">Iphone 15 Pro Max 256 GB</div>
+                     <div class="price">$1399</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="ipad" onclick="show('l5');">
+                  <div class="item">
+                     <img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2021/09/15/image-removebg-preview-23.png" alt="">
+                     <div class="name">Ipad mini 6 Wifi 64 GB</div>
+                     <div class="price">$699</div>
+                     <button>MORE DETAILS</button> 
+                  </div>
+               </a>
+               <a class="macbook" onclick="show('l8');">
+                  <div class="item">
+                     <img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2023/06/06/mba15-silver-1.png" alt="">
+                     <div class="name">MacBook Air 15'' M2</div>
+                     <div class="price">$2199</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="macbook" onclick="show('l7');">
+                  <div class="item">
+                     <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/1/_/1_74_10.png" alt="">
+                     <div class="name">MacBook Air 13'' M2</div>
+                     <div class="price">$1999</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="airpod" onclick="show('p2');">
+                  <div class="item">
+                     <img src="https://cdn.hoanghamobile.com/i/preview/Uploads/2022/09/09/image-removebg-preview-10.png" alt="">
+                     <div class="name">AirPods 3 2022</div>
+                     <div class="price">$399</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="accessory" onclick="show('p8');">
+                  <div class="item">
+                     <img src="https://product.hstatic.net/200000348419/product/apple_magic_trackpad_black_2022_mmmp3_0_fefbe60e3c484e2fb2b37228159c55d6_grande.png" alt="">
+                     <div class="name">Magic Trackpad 2 2022</div>
+                     <div class="price">$199</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="airpod" onclick="show('p1');">
+                  <div class="item">
+                     <img src="https://cdn.hoanghamobile.com/i/preview/Uploads/2020/10/27/image-removebg-preview%20(30).png" alt="">
+                     <div class="name">AirPods 2</div>
+                     <div class="price">$149</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="accessory" onclick="show('p6');">
+                  <div class="item">
+                     <img src="https://product.hstatic.net/200000348419/product/apple_magic_mouse_2022_black_mmmq3_0_a825b7a6966b4a158d7e11222d6fab0b.png" alt="">
+                     <div class="name">Magic Mouse 2 2022</div>
+                     <div class="price">$299</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="ipad" onclick="show('l3');">
+                  <div class="item">
+                     <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/i/p/ipad-pro-13-select-202210_4_1.png" alt="">
+                     <div class="name">Ipad Pro 11'' 2022 M2 128 GB</div>
+                     <div class="price">$999</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="ipad" onclick="show('l4');">
+                  <div class="item">
+                     <img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2022/03/10/apple-ipad-air-m1-10-9-2022-8.png" alt="">
+                     <div class="name">Ipad Air 5 10.9'' 2022 64 GB</div>
+                     <div class="price">$899</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="macbook" onclick="show('l9');">
+                  <div class="item">
+                     <img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2023/02/28/mabookpro14-gray-1.png" alt="">
+                     <div class="name">MacBook Pro 14'' M2</div>
+                     <div class="price">$1999</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="macbook" onclick="show('l6');">
+                  <div class="item">
+                     <img src="data:image/jpeg;base64,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" alt="">
+                     <div class="name">MACBOOK AIR 13'' M1</div>
+                     <div class="price">$1199</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="airpod" onclick="show('p3');">
+                  <div class="item">
+                     <img src="https://cdn0718.cdn4s.com/media/ph%E1%BB%A5%20ki%E1%BB%87n/airpod-pro.png" alt="">
+                     <div class="name">AirPods Pro 2022</div>
+                     <div class="price">$299</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="iphone" onclick="show('l1');">
+                  <div class="item">
+                     <img src="https://nhistore.com.vn/wp-content/uploads/2022/09/iphone-14-pro-max-tim-nhistore.png" alt="">
+                     <div class="name">Iphone 14 Pro Max 128 GB</div>
+                     <div class="price">$1399</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="accessory" onclick="show('p10');">
+                  <div class="item">
+                     <img src="https://product.hstatic.net/200000348419/product/clear_case_magsafe_iphone_15_plus_0_53b0604368ed4ea8946410b5f7957948_master.png" alt="">
+                     <div class="name">Iphone 15 Plus Case MagSafe</div>
+                     <div class="price">$149</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="accessory" onclick="show('p9');">
+                  <div class="item">
+                     <img src="https://product.hstatic.net/200000348419/product/apple_usb_c_to_lightning_cable_1m_mm0a3_0_38904dc998864fc4b250e3e63d5dae33_master.png" alt="">
+                     <div class="name">USB-C to Lightning Apple Cable</div>
+                     <div class="price">$49</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="macbook" onclick="show('l10');">
+                  <div class="item">
+                     <img src="https://product.hstatic.net/200000348419/product/macbook_pro_m2_13_inch_silver_0_1e499457d47948118e89117da7560f40_master.png" alt="">
+                     <div class="name">MacBook Pro 13'' M2</div>
+                     <div class="price">$1699</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="accessory" onclick="show('p4');">
+                  <div class="item">
+                     <img src="https://product.hstatic.net/200000348419/product/apple_airtag_0_6e56ae5ee6454f86818533f4675a0d01.png" alt="">
+                     <div class="name">AirTag</div>
+                     <div class="price">$69</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="iphone" onclick="show('l2');">
+                  <div class="item">
+                     <img src="https://product.hstatic.net/1000300544/product/iphone-13-pro-max-blue-select_cda22afa40c24975bdc2cd6075ef2124.png" alt="">
+                     <div class="name">Iphone 13 Pro Max 256 GB</div>
+                     <div class="price">$999</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="accessory" onclick="show('p5');">
+                  <div class="item">
+                     <img src="data:image/png;base64,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" alt="">
+                     <div class="name">Magic Keyboard 2022 Full</div>
+                     <div class="price">$299</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+               <a class="accessory" onclick="show('p7');">
+                  <div class="item">
+                     <img src="https://shopdunk.com/images/thumbs/0001395_sac-20w-usb-c-power-adapter.png" alt="">
+                     <div class="name">Apple Power Adapter 20W Type-C</div>
+                     <div class="price">$29</div>
+                     <button>MORE DETAILS</button>
+                  </div>
+               </a>
+            </ul>
+         </div>
+         <div id="footer">
+            <div class="box">
+                <div class="logo">
+                    <img src="ima/logo-hope.svg" class="LOGO" alt="Logo">
+                </div>
+                <p>Always providing genuine products for our customers</p>
+            </div>
+        
+            <div class="box">
+                <h3>CONTENT</h3>
+                <ul class="quick-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <!-- <li><a href="#">Products</a></li> -->
+                    <li><a href="ABOUTUS.html">Contact</a></li>
+                </ul>
+            </div>
+        
+            <div class="box">
+                <h3>CONTACT</h3>
+                <form action="" method="post">
+                    <input type="email" name="email" placeholder="Email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+      </div>
+         <div class="detail-background">
+            <div id="iphonedetail">
+               <div class="content">
+                  <h2>
+                     Iphone 15 Pro Max 256GB <span onclick="hide('iphonedetail');">Close</span>
+                  </h2>
+                  <div id="detail">
+                     <div style="display: flex; flex-direction: column;justify-content: center;">
+                        <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/42/305658/s16/iphone-15-pro-max-blue-thumbtz-650x650.png" alt="">
+                        <div class="price">$1399</div>
+                        <button onclick="up('pd1')">ADD TO CART</button>
+                     </div>
+                     <div>
+                        <h3>Technical Specifications</h3>
+                        <table>
+                           <tr>
+                              <td>Operating System</td>
+                              <td>IOS</td>
+                           </tr>
+                           <tr>
+                              <td>Chip</td>
+                              <td>A17 Pro</td>
+                           </tr>
+                           <tr>
+                              <td>Screen</td>
+                              <td>Oled</td>
+                           </tr>
+                           <tr>
+                              <td>Ram</td>
+                              <td>8GB</td>
+                           </tr>
+                           <tr>
+                              <td>SSD</td>
+                              <td>GB</td>
+                           </tr>
+                           <tr>
+                              <td>Security</td>
+                              <td>FaceID và Password</td>
+                           </tr>
+                           <tr>
+                              <td>Communication Ports</td>
+                              <td>Type C</td>
+                           </tr>
+                           <tr>
+                              <td>Battery</td>
+                              <td>29 hours</td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+    <!-- Iphone -->
+    <div id="l1">
+      <div class="content">
+      <h2>
+          Iphone 14 Pro Max 128 GB <span onclick="hide('l1')">Close</span>
+      </h2>
+      <div id="detail">
+          <div style="display: flex; flex-direction: column;justify-content: center;"><img src="https://nhistore.com.vn/wp-content/uploads/2022/09/iphone-14-pro-max-tim-nhistore.png" alt="">
+              <div class="price">$1399</div>
+              <button onclick="up('pd14')">ADD TO CART</button>
+          </div>
+          <div>
+              <h3>Technical Specifications</h3>
+              <table>
+                  <tr>
+                      <td>Operating System</td>
+                      <td>IOS</td>
+                  </tr>
+                  <tr>
+                      <td>Chip</td>
+                      <td>A16 Bionic</td>
+                  </tr>
+                  <tr>
+                      <td>Screen</td>
+                      <td>Oled</td>
+                  </tr>
+                  <tr>
+                      <td>Ram</td>
+                      <td>6GB</td>
+                  </tr>
+                  <tr>
+                      <td>SSD</td>
+                      <td>128 GB</td>
+                  </tr>
+                  <tr>
+                      <td>Security</td>
+                      <td>FaceID và Password</td>
+                  </tr>
+                  <tr>
+                      <td>Communication Ports</td>
+                      <td>Lightning</td>
+                  </tr>
+                  <tr>
+                      <td>Battery</td>
+                      <td>4323 mAh</td>
+                  </tr>
+              </table>
+      </div>
+  </div>
+</div>
+  </div>
+
+  
+  <!-- Iphone -->
+  <div id="l2">
+      <div class="content">
+      <h2>
+          Iphone 13 Pro Max 256 GB <span onclick="hide('l2')">Close</span>
+      </h2>
+      <div id="detail">
+          <div style="display: flex; flex-direction: column;justify-content: center;"><img src="https://product.hstatic.net/1000300544/product/iphone-13-pro-max-blue-select_cda22afa40c24975bdc2cd6075ef2124.png" alt="">
+              <div class="price">$999</div>
+              <button onclick="up('pd19')">ADD TO CART</button>
+          </div>
+          <div>
+              <h3>Technical Specifications</h3>
+              <table>
+                  <tr>
+                      <td>Operating System</td>
+                      <td>IOS</td>
+                  </tr>
+                  <tr>
+                      <td>Chip</td>
+                      <td>A15 Bionic</td>
+                  </tr>
+                  <tr>
+                      <td>Screen</td>
+                      <td>Oled</td>
+                  </tr>
+                  <tr>
+                      <td>Ram</td>
+                      <td>6GB</td>
+                  </tr>
+                  <tr>
+                      <td>SSD</td>
+                      <td>256 GB</td>
+                  </tr>
+                  <tr>
+                      <td>Security</td>
+                      <td>FaceID và Password</td>
+                  </tr>
+                  <tr>
+                      <td>Communication Ports</td>
+                      <td>Lightning</td>
+                  </tr>
+                  <tr>
+                      <td>Battery</td>
+                      <td>4352 mAh</td>
+                  </tr>
+              </table>
+      </div>
+  </div>
+</div>
+  </div>
+
+  
+  <!-- Ipad -->
+  <div id="l3">
+      <div class="content">
+      <h2>
+          Ipad Pro 11'' 2022 M2 Wifi 128 GB <span onclick="hide('l3')">Close</span>
+      </h2>
+      <div id="detail">
+          <div style="display: flex; flex-direction: column;justify-content: center;"><img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/i/p/ipad-pro-13-select-202210_4_1.png" alt="">
+              <div class="price">$999</div>
+              <button onclick="up('pd9')">ADD TO CART</button>
+          </div>
+          <div>
+              <h3>Technical Specifications</h3>
+              <table>
+                  <tr>
+                      <td>Operating System</td>
+                      <td>IPadIOS</td>
+                  </tr>
+                  <tr>
+                      <td>Chip</td>
+                      <td>Apple M2</td>
+                  </tr>
+                  <tr>
+                      <td>Screen</td>
+                      <td>Retina</td>
+                  </tr>
+                  <tr>
+                      <td>Ram</td>
+                      <td>8GB</td>
+                  </tr>
+                  <tr>
+                      <td>SSD</td>
+                      <td>128 GB</td>
+                  </tr>
+                  <tr>
+                      <td>Security</td>
+                      <td>FaceID và Password</td>
+                  </tr>
+                  <tr>
+                      <td>Communication Ports</td>
+                      <td>Type C</td>
+                  </tr>
+                  <tr>
+                      <td>Battery</td>
+                      <td>19.3 Wh</td>
+                  </tr>
+              </table>
+      </div>
+  </div>
+</div>
+  </div>
+
+
+
+  <!-- Ipad -->
+  <div id="l4">
+      <div class="content">
+      <h2>
+          Ipad Air 5 10.9 inch 2022 64 GB <span onclick="hide('l4')">Close</span>
+      </h2>
+      <div id="detail">
+          <div style="display: flex; flex-direction: column;justify-content: center;"><img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2022/03/10/apple-ipad-air-m1-10-9-2022-8.png" alt="">
+              <div class="price">$899</div>
+              <button onclick="up('pd10')">ADD TO CART</button>
+          </div>
+          <div>
+              <h3>Technical Specifications</h3>
+              <table>
+                  <tr>
+                      <td>Operating System</td>
+                      <td>IPadIOS</td>
+                  </tr>
+                  <tr>
+                      <td>Chip</td>
+                      <td>Apple M1</td>
+                  </tr>
+                  <tr>
+                      <td>Screen</td>
+                      <td>Retina</td>
+                  </tr>
+                  <tr>
+                      <td>Ram</td>
+                      <td>8GB</td>
+                  </tr>
+                  <tr>
+                      <td>SSD</td>
+                      <td>64 GB</td>
+                  </tr>
+                  <tr>
+                      <td>Security</td>
+                      <td>FaceID và Password</td>
+                  </tr>
+                  <tr>
+                      <td>Communication Ports</td>
+                      <td>Type C</td>
+                  </tr>
+                  <tr>
+                      <td>Battery</td>
+                      <td>19.3 Wh</td>
+                  </tr>
+              </table>
+      </div>
+  </div>
+</div>
+  </div>
+
+
+
+  <!-- Ipad -->
+  <div id="l5">
+      <div class="content">
+      <h2>
+          Ipad mini 6 Wifi 64GB <span onclick="hide('l5')">Close</span>
+      </h2>
+      <div id="detail">
+          <div style="display: flex; flex-direction: column;justify-content: center;"><img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2021/09/15/image-removebg-preview-23.png" alt="">
+              <div class="price">$699</div>
+              <button onclick="up('pd2')">ADD TO CART</button>
+          </div>
+          <div>
+              <h3>Technical Specifications</h3>
+              <table>
+                  <tr>
+                      <td>Operating System</td>
+                      <td>IPadIOS</td>
+                  </tr>
+                  <tr>
+                      <td>Chip</td>
+                      <td>Apple GPU 5 nhân</td>
+                  </tr>
+                  <tr>
+                      <td>Screen</td>
+                      <td>IPS LCD</td>
+                  </tr>
+                  <tr>
+                      <td>Ram</td>
+                      <td>4GB</td>
+                  </tr>
+                  <tr>
+                      <td>SSD</td>
+                      <td>64 GB</td>
+                  </tr>
+                  <tr>
+                      <td>Security</td>
+                      <td>Touch ID và Password</td>
+                  </tr>
+                  <tr>
+                      <td>Communication Ports</td>
+                      <td>Type C</td>
+                  </tr>
+                  <tr>
+                      <td>Battery</td>
+                      <td>19.3 Wh</td>
+                  </tr>
+              </table>
+      </div>
+  </div>
+</div>
+  </div>
+
+
+
+  <!-- MacBook -->
+  <div id="l6">
+      <div class="content">
+      <h2>
+          MacBook Air 13'' M1 <span onclick="hide('l6')">Close</span>
+      </h2>
+      <div id="detail">
+          <div style="display: flex; flex-direction: column;justify-content: center;"><img src="data:image/jpeg;base64,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" alt="">
+              <div class="price">$1199</div>
+              <button onclick="up('pd12')">ADD TO CART</button>
+          </div>
+          <div>
+              <h3>Technical Specifications</h3>
+              <table>
+                  <tr>
+                      <td>Operating System</td>
+                      <td>macOS</td>
+                  </tr>
+                  <tr>
+                      <td>Chip</td>
+                      <td>Chip Apple M1</td>
+                  </tr>
+                  <tr>
+                      <td>Screen</td>
+                      <td>Retina</td>
+                  </tr>
+                  <tr>
+                      <td>Ram</td>
+                      <td>8GB</td>
+                  </tr>
+                  <tr>
+                      <td>SSD</td>
+                      <td>256 GB</td>
+                  </tr>
+                  <tr>
+                      <td>Security</td>
+                      <td>Touch ID và Password</td>
+                  </tr>
+                  <tr>
+                      <td>Communication Ports</td>
+                      <td>DisplayPort</td>
+                  </tr>
+                  <tr>
+                      <td>Battery</td>
+                      <td>49.9 Wh</td>
+                  </tr>
+              </table>
+      </div>
+  </div>
+</div>
+  </div>
+
+
+
+  <!-- MacBook -->
+  <div id="l7">
+      <div class="content">
+      <h2>
+          MacBook Air 13'' M2 <span onclick="hide('l7')">Close</span>
+      </h2>
+      <div id="detail">
+          <div style="display: flex; flex-direction: column;justify-content: center;"><img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/1/_/1_74_10.png" alt="">
+              <div class="price">$1999</div>
+              <button onclick="up('pd4')">ADD TO CART</button>
+          </div>
+          <div>
+              <h3>Technical Specifications</h3>
+              <table>
+                  <tr>
+                      <td>Operating System</td>
+                      <td>macOS</td>
+                  </tr>
+                  <tr>
+                      <td>Chip</td>
+                      <td>Chip Apple M2</td>
+                  </tr>
+                  <tr>
+                      <td>Screen</td>
+                      <td>Liqquid Retina</td>
+                  </tr>
+                  <tr>
+                      <td>Ram</td>
+                      <td>8GB</td>
+                  </tr>
+                  <tr>
+                      <td>SSD</td>
+                      <td>256 GB</td>
+                  </tr>
+                  <tr>
+                      <td>Security</td>
+                      <td>Touch ID và Password</td>
+                  </tr>
+                  <tr>
+                      <td>Communication Ports</td>
+                      <td>MagSafe 3</td>
+                  </tr>
+                  <tr>
+                      <td>Battery</td>
+                      <td>52.6 Wh</td>
+                  </tr>
+              </table>
+      </div>
+  </div>
+</div>
+  </div>
+
+
+
+  <!-- MacBook -->
+  <div id="l8">
+      <div class="content">
+      <h2>
+          MacBook Air 15'' M2 <span onclick="hide('l8')">Close</span>
+      </h2>
+      <div id="detail">
+          <div style="display: flex; flex-direction: column;justify-content: center;"><img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2023/06/06/mba15-silver-1.png" alt="">
+              <div class="price">$2199</div>
+              <button onclick="up('pd3')">ADD TO CART</button>
+          </div>
+          <div>
+              <h3>Technical Specifications</h3>
+              <table>
+                  <tr>
+                      <td>Operating System</td>
+                      <td>macOS</td>
+                  </tr>
+                  <tr>
+                      <td>Chip</td>
+                      <td>Chip Apple M2</td>
+                  </tr>
+                  <tr>
+                      <td>Screen</td>
+                      <td>Liqquid Retina</td>
+                  </tr>
+                  <tr>
+                      <td>Ram</td>
+                      <td>8GB</td>
+                  </tr>
+                  <tr>
+                      <td>SSD</td>
+                      <td>256 GB</td>
+                  </tr>
+                  <tr>
+                      <td>Security</td>
+                      <td>Touch ID và Password</td>
+                  </tr>
+                  <tr>
+                      <td>Communication Ports</td>
+                      <td>MagSafe 3</td>
+                  </tr>
+                  <tr>
+                      <td>Battery</td>
+                      <td>66.5 Wh</td>
+                  </tr>
+              </table>
+      </div>
+  </div>
+</div>
+  </div>
+
+
+
+  <!-- MacBook -->
+  <div id="l9">
+      <div class="content">
+      <h2>
+          MacBook Pro 14''M2 <span onclick="hide('l9')">Close</span>
+      </h2>
+      <div id="detail">
+          <div style="display: flex; flex-direction: column;justify-content: center;"><img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2023/02/28/mabookpro14-gray-1.png" alt="">
+              <div class="price">$1999</div>
+              <button onclick="up('pd11')">ADD TO CART</button>
+          </div>
+          <div>
+              <h3>Technical Specifications</h3>
+              <table>
+                  <tr>
+                      <td>Operating System</td>
+                      <td>macOS</td>
+                  </tr>
+                  <tr>
+                      <td>Chip</td>
+                      <td>Chip Apple M3</td>
+                  </tr>
+                  <tr>
+                      <td>Screen</td>
+                      <td>Liqquid Retina XDR</td>
+                  </tr>
+                  <tr>
+                      <td>Ram</td>
+                      <td>8GB</td>
+                  </tr>
+                  <tr>
+                      <td>SSD</td>
+                      <td>512 GB</td>
+                  </tr>
+                  <tr>
+                      <td>Security</td>
+                      <td>Touch ID và Password</td>
+                  </tr>
+                  <tr>
+                      <td>Communication Ports</td>
+                      <td>MagSafe 3</td>
+                  </tr>
+                  <tr>
+                      <td>Battery</td>
+                      <td>70 Wh</td>
+                  </tr>
+              </table>
+      </div>
+  </div>
+</div>
+  </div>
+
+
+
+  <!-- MacBook -->
+  <div id="l10">
+      <div class="content">
+      <h2>
+          MacBook Pro 13''M2 <span onclick="hide('l10')">Close</span>
+      </h2>
+      <div id="detail">
+          <div style="display: flex; flex-direction: column;justify-content: center;"><img src="https://shopdunk.com/images/thumbs/0001395_sac-20w-usb-c-power-adapter.png" alt="">
+              <div class="price">$1699</div>
+              <button onclick="up('pd17')">ADD TO CART</button>
+          </div>
+          <div>
+              <h3>Technical Specifications</h3>
+              <table>
+                  <tr>
+                      <td>Weight</td>
+                      <td>80g</td>
+                  </tr>
+                  <tr>
+                      <td>Color</td>
+                      <td>White</td>
+                  </tr>
+                  <tr>
+                      <td>Availability</td>
+                      <td>iPhone 8 onwards</td>
+                  </tr>
+                  
+                  <tr>
+                      <td>Communication Ports</td>
+                      <td>USB-C</td>
+                  </tr>
+                  
+                  
+              </table>
+      </div>
+  </div>
+</div>
+  </div>
+
+  
+    
+  <div id="p1">
+   <div class="content">
+   <h2>
+    Tai nghe AirPods 2 <span onclick="hide('p1')">Close</span>
+   </h2>
+   <div id="detail">
+       <div style="display: flex; flex-direction: column;justify-content: center;">
+           <img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2020/10/27/image-removebg-preview%20(27).png" alt="AirPods 2">
+           <div class="price">$149</div>
+           <button onclick="up('pd7')">ADD TO CART</button>
+       </div>
+       <div>
+           <h3>Technical Specifications</h3>
+           <table>
+               <tr>
+                   <td>Dimensions</td>
+                   <td>53.5 x 44.3 x 21.3 mm</td>
+               </tr>
+               <tr>
+                   <td>Battery Capacity</td>
+                   <td>5 hours</td>
+               </tr>
+               <tr>
+                   <td>Communication Ports</td>
+                   <td>Lightning Charging Port</td>
+               </tr>
+               <tr>
+                   <td>Compatible Operating Systems
+                   <td>iPadOS</td>
+               </tr>
+               <tr>
+                   <td>Features</td>
+                   <td>Microphone for Calls and Music Playback</td>
+               </tr>
+           </table>
+   </div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="p2">
+   <div class="content">
+   <h2>
+    Tai nghe AirPods 3 2022 <span onclick="hide('p2')">Close</span>
+   </h2>
+   <div id="detail">
+       <div style="display: flex; flex-direction: column;justify-content: center;">
+           <img src="https://cdn.hoanghamobile.com/i/preview/Uploads/2022/09/09/image-removebg-preview-10.png" alt="AirPods 3">
+           <div class="price">$399</div>
+           <button onclick="up('pd5')">ADD TO CART</button>
+       </div>
+       <div>
+           <h3>Technical Specifications</h3>
+           <table>
+               <tr>
+                   <td>Dimensions</td>
+                   <td>54.4 x 21.38 x 46.40 mm</td>
+               </tr>
+               <tr>
+                   <td>Dung lượng Battery</td>
+                   <td>6 hours</td>
+               </tr>
+               <tr>
+                   <td>Communication Ports</td>
+                   <td>Lightning Charging Port</td>
+               </tr>
+               <tr>
+                   <td>Compatible Operating Systems
+                   <td>iOS</td>
+               </tr>
+               <tr>
+                   <td>Features</td>
+                   <td>Water-resistant, Music Playback</td>
+               </tr>
+           </table>
+   </div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="p3">
+   <div class="content">
+   <h2>
+    Tai nghe AirPods Pro 2022 <span onclick="hide('p3')">Close</span>
+   </h2>
+   <div id="detail">
+       <div style="display: flex; flex-direction: column;justify-content: center;">
+           <img src="https://cdn0718.cdn4s.com/media/ph%E1%BB%A5%20ki%E1%BB%87n/airpod-pro.png" alt="AirPods Pro">
+           <div class="price">$299</div>
+           <button onclick="up('pd13')">ADD TO CART</button>
+       </div>
+       <div>
+           <h3>Technical Specifications</h3>
+           <table>
+               <tr>
+                   <td>Dimensions</td>
+                   <td>30.9 x 21.8 x 24mm</td>
+               </tr>
+               <tr>
+                   <td>Battery Capacity</td>
+                   <td>6 hours</td>
+               </tr>
+               <tr>
+                   <td>Communication Ports</td>
+                   <td>Lightning Charging Port</td>
+               </tr>
+               <tr>
+                   <td>Compatible Operating Systems
+                   <td>iOS</td>
+               </tr>
+               <tr>
+                   <td>Features</td>
+                   <td>Water-resistant, Music Playback</td>
+               </tr>
+           </table>
+   </div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="p4">
+   <div class="content">
+   <h2>
+       AirTag <span onclick="hide('p4')">Close</span>
+   </h2>
+   <div id="detail">
+       <div style="display: flex; flex-direction: column;justify-content: center;">
+           <img src="https://product.hstatic.net/200000348419/product/apple_airtag_0_6e56ae5ee6454f86818533f4675a0d01_master.png" alt="Air Tag">
+           <div class="price">$69</div>
+           <button onclick="up('pd18')">ADD TO CART</button>
+       </div>
+       <div>
+           <h3>Technical Specifications</h3>
+           <table>
+               <tr>
+                   <td>Dimensions</td>
+                   <td>Diameter: 31.9 mm <br>Height: 8.0 mm</td>
+               </tr>
+               <tr>
+                   <td>Weight</td>
+                   <td>11g</td>
+               </tr>
+           </table>
+   </div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="p5">
+   <div class="content">
+   <h2>
+       Magic Keyboard 2022 Full <span onclick="hide('p5')">Close</span>
+   </h2>
+   <div id="detail">
+       <div style="display: flex; flex-direction: column;justify-content: center;">
+           <img src="https://powermaccenter.com/cdn/shop/files/MMMR3_f66868d2-c66d-47ef-bb74-e58a04d186e9_1445x.png?v=1692029375" alt="Magic Keyboard 2022 Touch ID and Numeric Keypad - Black Keys">
+           <div class="price">$299</div>
+           <button onclick="up('pd20')">ADD TO CART</button>
+       </div>
+       <div>
+           <h3>Technical Specifications</h3>
+           <table>
+               <tr>
+                   <td>Dimensions</td>
+                   <td>16.48" x 4.52" x 0.16" - 0.43" </td>
+               </tr>
+               <tr>
+                   <td>Weight</td>
+                   <td>0.81 pound</td>
+               </tr>
+               <tr>
+                   <td>Connection port</td>
+                   <td>Lightning Charging Port</td>
+               </tr>
+               <tr>
+                   <td>Features</td>
+                   <td>Multimedia Buttons</td>
+               </tr>
+               
+           </table>
+   </div>
+</div>
+</div>
+</div>
+
+
+
+<div id="p6">
+   <div class="content">
+   <h2>
+       Magic Mouse 2 2022 <span onclick="hide('p6')">Close</span>
+   </h2>
+   <div id="detail">
+       <div style="display: flex; flex-direction: column;justify-content: center;">
+           <img src="https://vuatao.vn/wp-content/uploads/2021/09/chuot-bluetooth-magic-mouse-2-apple-mrme2-den-thumb-650x650-1.png" alt="Magic Mouse 2">
+           <div class="price">$299</div>
+           <button onclick="up('pd8')">ADD TO CART</button>
+       </div>
+       <div>
+           <h3>Technical Specifications</h3>
+           <table>
+               <tr>
+                   <td>Dimensions</td>
+                   <td>2.16 x 5.71 x 11.35 mm</td>
+               </tr>
+               <tr>
+                   <td>Weight</td>
+                   <td>99g</td>
+               </tr>
+               <tr>
+                   <td>Conection Type</td>
+                   <td>Bluetooth</td>
+               </tr>
+           </table>
+   </div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="p7">
+   <div class="content">
+   <h2>
+       Apple Power Adapter 20W Type-C<span onclick="hide('p7')">Close</span>
+   </h2>
+   <div id="detail">
+       <div style="display: flex; flex-direction: column;justify-content: center;">
+           <img src="https://cdn.hoanghamobile.com/i/preview/Uploads/2022/08/20/image-removebg-preview-17.png" alt="Magic Trackpad 2">
+           <div class="price">$29</div>
+           <button onclick="up('pd21')">ADD TO CART</button>
+       </div>
+       <div>
+           <h3>Technical Specifications</h3>
+           <table>
+               <tr>
+                   <td>Charging Power</td>
+                   <td>20W</td>
+               </tr>
+               <tr>
+                   <td>Weight</td>
+                   <td>80g</td>
+               </tr>    
+           </table>
+   </div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="p8">
+   <div class="content">
+   <h2>
+       Magic Trackpad 2 2022 <span onclick="hide('p8')">Close</span>
+   </h2>
+   <div id="detail">
+       <div style="display: flex; flex-direction: column;justify-content: center;">
+           <img src="https://cdn.hoanghamobile.com/i/preview/Uploads/2022/08/20/image-removebg-preview-17.png" alt="Magic Trackpad 2">
+           <div class="price">$199</div>
+           <button onclick="up('pd6')">ADD TO CART</button>
+       </div>
+       <div>
+           <h3>Technical Specifications</h3>
+           <table>
+               <tr>
+                   <td>Dimensions</td>
+                   <td>6.3" x 4.52" x 0.19" - 0.43"</td>
+               </tr>
+               <tr>
+                   <td>Weight</td>
+                   <td>0.51 pound</td>
+               </tr>
+               <tr>
+                   <td>Communication Ports</td>
+                   <td>Lightning Charging Port, Bluetooth</td>
+               </tr>
+               <tr>
+                   <td>Features</td>
+                   <td>Force Touch, Multi Touch</td>
+               </tr>
+               
+           </table>
+   </div>
+</div>
+</div>
+</div>
+
+
+
+<div id="p9">
+   <div class="content">
+   <h2>
+       USB-C to Lightning Apple Cable<span onclick="hide('p9')">Close</span>
+   </h2>
+   <div id="detail">
+       <div style="display: flex; flex-direction: column;justify-content: center;">
+           <img src="https://iphonehd.vn/wp-content/uploads/2021/11/123-650x650-1-500x500.png" alt="USB-C to Lightning Apple Cable 1m 2021">
+           <div class="price">$49</div>
+           <button onclick="up('pd16')">ADD TO CART</button>
+       </div>
+       <div>
+           <h3>Technical Specifications</h3>
+           <table>
+               <tr>
+                   <td>Charging Power</td>
+                   <td>20W</td>
+               </tr>
+               <tr>
+                   <td>Weight</td>
+                   <td>30g</td>
+               </tr>
+               <tr>
+                   <td>Cable Length</td>
+                   <td>1m</td>
+               </tr>
+               <tr>
+                   <td>Features</td>
+                   <td>Image Data Access, Data Transfer, Charging</td>
+               </tr>
+               
+           </table>
+   </div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="p10">
+   <div class="content">
+   <h2>
+       Iphone 15 Plus Case MagSafe <span onclick="hide('p10')">Close</span>
+   </h2>
+   <div id="detail">
+       <div style="display: flex; flex-direction: column;justify-content: center;">
+           <img src="https://product.hstatic.net/200000348419/product/clear_case_magsafe_iphone_15_plus_0_53b0604368ed4ea8946410b5f7957948.png" alt="iPhone 15 Plus Clear Case with MagSafe">
+           <div class="price">$149</div>
+           <button onclick="up('pd15')">ADD TO CART</button>
+       </div>
+       <div>
+           <h3>Technical Specifications</h3>
+           <table>
+               <tr>
+                   <td>Features</td>
+                   <td>Wireless Charging, Scratch Resistance</td>
+               </tr>
+               <tr>
+                   <td>Material</td>
+                   <td>Silicon</td>
+               </tr>
+           </table>
+   </div>
+</div>
+</div>
+</div>
+
+</div>
+<!-- Chat Widget -->
+<div id="chat-widget">
+    <span onclick="toggleChat()"><i class='bx bxl-messenger bx-lg bx-tada'></i></span>
+</div>
+
+<!-- Chat Box -->
+<div id="chat-box">
+    <div id="chat-header">Chat with Us</div>
+    <div id="chat-body">
+        <div class="message">
+            <img src="ima/logo-hope(greenyellow).svg" class="avatar">
+            <p class="system-message">Welcome to the chat!</p>
+        </div>
+        <div class="message">
+            <!-- <p class="timestamp">10:30 AM</p> -->
+            <p class="user-message">How can I help you?</p>
+        </div>
+    </div>
+    <div id="chat-input">
+        <input type="text" id="user-message" placeholder="Type your message...">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+</div>
+<script>
+    var chatBox = document.getElementById('chat-box');
+
+    function toggleChat() {
+        chatBox.classList.toggle('open');
+        if (chatBox.classList.contains('open')) {
+            // Add an event listener to close the chat box when clicking outside of it
+            document.addEventListener('click', closeChatOnClickOutside);
+        } else {
+            // Remove the event listener when the chat box is closed
+            document.removeEventListener('click', closeChatOnClickOutside);
+        }
+    }
+
+    function closeChatOnClickOutside(event) {
+        if (!chatBox.contains(event.target) && !document.getElementById('chat-widget').contains(event.target)) {
+            chatBox.classList.remove('open');
+            document.removeEventListener('click', closeChatOnClickOutside);
+        }
+    }
+
+    function sendMessage() {
+            var userMessage = userMessageInput.value.trim();
+            if (userMessage !== '') {
+                displayMessage('user', userMessage);
+                // Here you can add logic to send the message to a server or handle it as needed.
+                // For now, let's simulate a response from the server after a short delay.
+                setTimeout(function () {
+                    displayMessage('admin', 'Thank you for your message! Our team will get back to you soon.');
+                }, 1000);
+                userMessageInput.value = '';
+            }
+        }
+
+        function displayMessage(sender, message) {
+            var messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            if (sender === 'user') {
+                messageDiv.classList.add('user-message');
+            } else {
+                messageDiv.classList.add('admin-message');
+            }
+            messageDiv.textContent = message;
+            chatBody.appendChild(messageDiv);
+            // Scroll to the bottom of the chat body to show the latest message
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    </script>
+    <!-- <div style="width: 100vw; height: 100vh; position: absolute; top: 0;">
+        <div style="width: 500px; height: fit-content; border-radius: 15px; background-color: #4CAF50; position: relative; margin: calc(50vw - 20px) auto;">
+            <div></div>
+        </div>
+    </div> -->
+</body>
+</html>

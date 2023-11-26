@@ -1,0 +1,19 @@
+#cart{
+    width: fit-content;
+    height: fit-content;
+    background-color: blue;
+}
+:root{
+    --sp1: none;
+    --sp2: block;
+    --sp3: block;
+}
+#sp1{
+    display: var(--sp1);
+}
+#sp2{
+    display: none;
+}
+#sp3{
+    display: none;
+}

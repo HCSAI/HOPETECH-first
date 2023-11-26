@@ -1,0 +1,32 @@
+#menu
+{
+    position: relative;
+    width: 800px;
+    margin: auto;
+    /* margin-bottom: 30px; */
+
+}
+#menu li {
+    float: left;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+  }
+  
+  #menu ul {
+    align-items: center;
+    background: none;
+    list-style-type: none;
+    width: 100%;
+  } 
+  #menu ul li a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    color: black;
+  }
+  #menu ul li:hover {
+    transform: scale(1.1,1.1);
+    transition-duration: 0.5s;
+  }

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOPETECH</title>
+    <link rel="stylesheet" href="HOME.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="https://alcdn.msauth.net/browser/2.17.0/js/msal-browser.min.js"></script>
+    <script src="HOME.js" defer></script>
+</head>
+<body style="scrollbar-color: green;">
+    <nav>
+        <div>
+            <a href="index.html"><img src="ima/logo-hope.svg" class="LOGO" alt="Logo"></a>
+        </div>
+        <ul>
+            <li><a href="ABOUTUS.html">ABOUT US</a></li>
+            <!-- <li>
+                <a href="CART.html">
+                    <i class='bx bx-cart bx-md'></i>
+                </a>
+            </li> -->
+            <!-- Thêm mục ACCOUNT -->
+            <li>
+                <a href="login2.html">
+                    <!-- Sử dụng ảnh avatar hình tròn -->
+                    <img style="height: 25px; width: 25px;" src="ima/logo-account.svg" alt="Avatar" class="avatar">
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <video autoplay loop playsinline class="Background-Video">
+            <source src="vid/backgroundHOME.mp4" type="video/mp4">
+        </video>
+        <audio src="vid/backgroundHOME.mp4" autoplay loop></audio>
+        
+        <div class="content">
+            <h1>TECHFORLIFE</h1>
+            <!-- Di chuyển liên kết "BUY NOW" vào thẻ chữ "PRODUCT" -->
+            <a href="PRODUCT1.html" class="buy-now">BUY NOW</a>
+        </div>
+    </div>
+
+
+    <!-- Include content from other HTML files -->
+    <!-- <div class="page-content"> -->
+        <!-- Include HOME content -->
+        <?php include 'index.html'; ?>
+        
+        <!-- Include PRODUCT content -->
+        <?php include 'product.html'; ?>
+
+        <!-- Include ABOUT US content -->
+        <?php include 'aboutus.html'; ?>
+
+        <!-- Include CART content -->
+        <?php include 'cart.html'; ?>
+    <!-- </div> -->
+    <div id="black-barrier">
+
+    </div>
+    <div class="hero1">
+        <div class="content1"> 
+            <h1>IPHONE 15 PRO</h1>      
+        <video autoplay playsinline class="Background-Video1">
+            <source src="vid/large_2x.mp4" type="video/mp4">
+        </video>
+        <audio src="vid/large_2x.mp4" autoplay loop></audio>
+            <div id="black-section">
+            <a href="PRODUCT1.html" class="buy-now">BUY NOW</a>
+            </div>
+        </div>
+        <div>
+            <h1 id="saleoff">SALE OFF 5%</h1>
+        </div>
+    </div>
+<div class="hope">
+    <div class="picture-hope">
+        <img src="img/picture.jpg" alt="fullscreen">
+    </div>
+</div>
+
+<div>
+    <a onclick="flip0()" href="#footer">
+    <img id="scroll-down" src="ima/scroll-down.svg" alt="">
+    </a>
+</div>
+<div>
+    <a onclick="flip1()" href="#body">
+    <img id="scroll-up" src="ima/scroll-down.svg" alt="">
+    </a>
+</div>
+
+    <div id="footer">
+        <div id="aboutus">
+            <div id="footer-left">
+                <a href="#body" id="footer-web"><img src="ima/logo-hope(greenyellow).svg" id="footer-logo-hope" alt=""></a>
+                <p style="font-size: 1vw;">Innovative technology for a better world</p>
+            </div>
+            <div id="footer-middle">
+                <div style="font-size: 1.2vw; font-weight: bold;">HOPE ____________________TEAM</div>
+                <div style="display: flex; flex: 2; width: auto; gap: 1vw">
+                <div style="width: fit-content; font-size: 1.2vw;">
+                    <p>Nguyễn Tiến Luật</p>
+                    <p>Trần Lý Nhật Hào</p>
+                    <p>Lê Thanh Phong</p>
+                </div>
+                <div style="width: fit-content; font-size: 1.2vw;">
+                    <p>Phạm Thiên Minh</p>
+                    <p>Huỳnh Hạo Nam</p>
+                    <p>Nguyễn Tấn Lộc</p>
+                </div>
+                </div>
+            </div>
+            <div id="footer-right">
+                <div style="font-size: 1.2vw; font-weight: bold;">CONTACT</div>
+                <a href="https://www.facebook.com/profile.php?id=61553258528007"><img src="ima/logo-facebook.svg" alt="" id="footer-logo-facebook"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

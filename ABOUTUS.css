@@ -1,0 +1,938 @@
+/* global.css */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Inter:300,900,500,700,600");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+/* style */
+
+:root {
+    --d-9d-9d-9: rgba(64, 201, 231, 1);
+    --white: rgba(30, 30, 30, 1);
+  }
+
+
+.about-us {
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .about-us .div {
+    background-color: #1e1e1e;
+    overflow: hidden;
+    width: 1440px;
+    height: 2827px;
+    position: relative;
+  }
+  
+  .about-us .overlap {
+    position: absolute;
+    width: 1388px;
+    height: 886px;
+    top: 107px;
+    left: 26px;
+    background-color: #ffffff;
+    border-radius: 23px;
+    border: 1px solid;
+    border-color: #000000;
+  }
+  
+  .about-us .group {
+    position: relative;
+    width: 1305px;
+    height: 735px;
+    top: 61px;
+    left: 42px;
+  }
+  
+  .about-us .text-wrapper {
+    width: 280px;
+    top: 0;
+    left: 532px;
+    color: #f66e0a;
+    font-size: 48px;
+    white-space: nowrap;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-2 {
+    position: absolute;
+    width: 447px;
+    top: 71px;
+    left: 11px;
+    font-family: "Inter", Helvetica;
+    font-weight: 900;
+    color: #f94f4f;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .p {
+    position: absolute;
+    width: 1275px;
+    top: 252px;
+    left: 14px;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-3 {
+    position: absolute;
+    width: 300px;
+    top: 379px;
+    left: 11px;
+    font-family: "Inter", Helvetica;
+    font-weight: 900;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-4 {
+    position: absolute;
+    width: 362px;
+    top: 179px;
+    left: 14px;
+    font-family: "Inter", Helvetica;
+    font-weight: 900;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-5 {
+    position: absolute;
+    width: 1278px;
+    top: 461px;
+    left: 11px;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-6 {
+    position: absolute;
+    width: 200px;
+    top: 597px;
+    left: 14px;
+    font-family: "Inter", Helvetica;
+    font-weight: 900;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-7 {
+    position: absolute;
+    width: 1275px;
+    top: 677px;
+    left: 11px;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .overlap-group-wrapper {
+    position: absolute;
+    width: 1444px;
+    height: 82px;
+    top: 0;
+    left: 0;
+  }
+  
+  .about-us .overlap-group {
+    position: relative;
+    width: 1440px;
+    height: 82px;
+  }
+  
+  .about-us .rectangle {
+    position: absolute;
+    width: 1440px;
+    height: 68px;
+    top: 0;
+    left: 0;
+    background-color: #adff2f;
+  }
+  
+  .about-us .text-wrapper-8 {
+    width: 173px;
+    top: 19px;
+    left: 871px;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-9 {
+    position: absolute;
+    width: 173px;
+    top: 21px;
+    left: 662px;
+    font-family: "Inter", Helvetica;
+    font-weight: 900;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .search {
+    position: absolute;
+    width: 50px;
+    height: 53px;
+    top: 11px;
+    left: 1075px;
+  }
+  
+  .about-us .user-regular {
+    position: absolute;
+    width: 45px;
+    height: 50px;
+    top: 9px;
+    left: 1243px;
+  }
+  
+  .about-us .logo-hope {
+    position: absolute;
+    width: 80px;
+    height: 36px;
+    top: 14px;
+    left: 30px;
+  }
+  
+  .about-us .shopping-cart-solid {
+    position: absolute;
+    width: 45px;
+    height: 50px;
+    top: 9px;
+    left: 1161px;
+  }
+  
+  .about-us .img {
+    position: absolute;
+    width: 38px;
+    height: 26px;
+    top: 22px;
+    left: 1364px;
+  }
+  
+  .about-us .line {
+    position: absolute;
+    width: 10px;
+    height: 51px;
+    top: 12px;
+    left: 1326px;
+  }
+  
+  .about-us .line-2 {
+    position: absolute;
+    width: 29px;
+    height: 2px;
+    top: 50px;
+    left: 944px;
+  }
+  
+  .about-us .text-wrapper-10 {
+    position: absolute;
+    width: 592px;
+    top: 1240px;
+    left: 405px;
+    font-family: "Inter", Helvetica;
+    font-weight: 900;
+    color: #ffffff;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .about-us .we-are-students-from {
+    position: absolute;
+    width: 429px;
+    top: 1321px;
+    left: 505px;
+    font-family: "Inter", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .frame {
+    top: 1478px;
+    left: 156px;
+    position: absolute;
+    width: 328px;
+    height: 413px;
+    background-color: #605a5a;
+  }
+  
+  .about-us .image {
+    width: 150px;
+    height: 150px;
+    top: 20px;
+    left: 89px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .about-us .text-wrapper-11 {
+    position: absolute;
+    width: 130px;
+    top: 191px;
+    left: 95px;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-12 {
+    width: 218px;
+    top: 221px;
+    left: 54px;
+    text-align: center;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .about-us .text-wrapper-13 {
+    position: absolute;
+    width: 276px;
+    top: 269px;
+    left: 26px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-14 {
+    width: 296px;
+    top: 328px;
+    left: 15px;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .frame-2 {
+    top: 1478px;
+    left: 558px;
+    border: 1px solid;
+    border-color: #1e1e1e;
+    position: absolute;
+    width: 328px;
+    height: 413px;
+    background-color: #605a5a;
+  }
+  
+  .about-us .image-2 {
+    width: 150px;
+    height: 150px;
+    top: 16px;
+    left: 89px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .about-us .text-wrapper-15 {
+    position: absolute;
+    width: 112px;
+    top: 189px;
+    left: 108px;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .mssv {
+    position: absolute;
+    width: 192px;
+    top: 219px;
+    left: 67px;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .about-us .text-wrapper-16 {
+    position: absolute;
+    width: 255px;
+    top: 269px;
+    left: 35px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .contact {
+    width: 296px;
+    top: 330px;
+    left: 15px;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .overlap-wrapper {
+    top: 1478px;
+    left: 956px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: #1e1e1e;
+    position: absolute;
+    width: 328px;
+    height: 413px;
+    background-color: #605a5a;
+  }
+  
+  .about-us .overlap-2 {
+    position: relative;
+    width: 516px;
+    height: 358px;
+    left: 48px;
+  }
+  
+  .about-us .frame-3 {
+    left: 188px;
+    position: absolute;
+    width: 328px;
+    height: 328px;
+    top: 0;
+  }
+  
+  .about-us .text-wrapper-17 {
+    position: absolute;
+    width: 180px;
+    top: 191px;
+    left: 26px;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .mssv-2 {
+    width: 218px;
+    top: 223px;
+    left: 0;
+    text-align: center;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .about-us .text-wrapper-18 {
+    position: absolute;
+    width: 193px;
+    top: 269px;
+    left: 19px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .image-3 {
+    width: 150px;
+    height: 150px;
+    top: 14px;
+    left: 41px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .about-us .text-wrapper-19 {
+    width: 350px;
+    top: 320px;
+    left: -55px;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .frame-4 {
+    top: 1949px;
+    left: 156px;
+    position: absolute;
+    width: 328px;
+    height: 413px;
+    background-color: #605a5a;
+  }
+  
+  .about-us .image-4 {
+    width: 150px;
+    height: 150px;
+    top: 16px;
+    left: 88px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .about-us .text-wrapper-20 {
+    position: absolute;
+    width: 117px;
+    top: 191px;
+    left: 106px;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-21 {
+    width: 184px;
+    top: 232px;
+    left: 72px;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .about-us .let-s-eat {
+    position: absolute;
+    width: 116px;
+    top: 269px;
+    left: 105px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-22 {
+    width: 296px;
+    top: 324px;
+    left: 15px;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .div-wrapper {
+    top: 1949px;
+    left: 556px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: #1e1e1e;
+    position: absolute;
+    width: 328px;
+    height: 413px;
+    background-color: #605a5a;
+  }
+  
+  .about-us .overlap-3 {
+    position: relative;
+    width: 558px;
+    height: 361px;
+    left: 6px;
+  }
+  
+  .about-us .overlap-4 {
+    position: absolute;
+    width: 558px;
+    height: 361px;
+    top: 0;
+    left: 0;
+  }
+  
+  .about-us .frame-5 {
+    left: 230px;
+    position: absolute;
+    width: 328px;
+    height: 328px;
+    top: 0;
+  }
+  
+  .about-us .text-wrapper-23 {
+    width: 192px;
+    top: 224px;
+    left: 62px;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .about-us .text-wrapper-24 {
+    position: absolute;
+    width: 308px;
+    top: 269px;
+    left: 0;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-25 {
+    width: 296px;
+    top: 311px;
+    left: 6px;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .image-5 {
+    width: 150px;
+    height: 150px;
+    top: 23px;
+    left: 79px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .about-us .text-wrapper-26 {
+    position: absolute;
+    width: 105px;
+    top: 191px;
+    left: 102px;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .frame-6 {
+    top: 1949px;
+    left: 958px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: #1e1e1e;
+    position: absolute;
+    width: 328px;
+    height: 413px;
+    background-color: #605a5a;
+  }
+  
+  .about-us .overlap-5 {
+    position: relative;
+    width: 538px;
+    height: 377px;
+    left: 26px;
+  }
+  
+  .about-us .overlap-6 {
+    position: absolute;
+    width: 538px;
+    height: 377px;
+    top: 0;
+    left: 0;
+  }
+  
+  .about-us .frame-7 {
+    left: 210px;
+    position: absolute;
+    width: 328px;
+    height: 328px;
+    top: 0;
+  }
+  
+  .about-us .image-6 {
+    width: 150px;
+    height: 150px;
+    top: 17px;
+    left: 63px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .about-us .text-wrapper-27 {
+    width: 184px;
+    top: 221px;
+    left: 53px;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .about-us .text-wrapper-28 {
+    position: absolute;
+    width: 198px;
+    top: 269px;
+    left: 39px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .contact-minhdeptrai {
+    width: 296px;
+    top: 327px;
+    left: 0;
+    position: absolute;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-29 {
+    position: absolute;
+    width: 130px;
+    top: 191px;
+    left: 73px;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .image-7 {
+    width: 70px;
+    height: 70px;
+    top: 2565px;
+    left: 174px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .about-us .text-wrapper-30 {
+    padding: 16px;
+    position: absolute;
+    width: 190px;
+    top: 2572px;
+    left: 279px;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-31 {
+    padding: 16px;
+    position: absolute;
+    width: 190px;
+    top: 2693px;
+    left: 279px;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .text-wrapper-32 {
+    position: absolute;
+    width: 212px;
+    top: 2479px;
+    left: 153px;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .about-us .image-8 {
+    width: 70px;
+    height: 70px;
+    top: 2694px;
+    left: 171px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+:root{
+    --color: #fff;
+    --contrast: 0;
+    --brightness: 100;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+nav
+{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+    z-index: 10;
+}
+nav:hover
+{
+    color: transparent;
+    background-color:greenyellow ;
+    --color: black;
+    --contrast: 100;
+}
+nav .LOGO
+{
+    width: 70px;
+    filter: contrast(var(--contrast)) brightness(var(--brightness)); 
+}
+nav .avatar
+{
+    width: 70px;
+    filter: contrast(var(--contrast)) brightness(var(--brightness)); 
+}
+nav ul {
+  display: flex;
+  align-items: center; /* Canh giữa theo chiều dọc */
+  padding: 0;
+}
+nav ul li 
+{
+    font-weight: bold;
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+
+}
+nav ul li a
+{
+    text-decoration: none;
+    color: var(--color);
+}

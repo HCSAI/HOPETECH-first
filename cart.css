@@ -1,0 +1,159 @@
+:root{
+    --pd1: 0;
+    --pd2: 0;
+    --pd3: 0;
+    --pd4: 0;
+    --pd5: 0;
+    --pd6: 0;
+    --pd7: 0;
+    --pd8: 0;
+    --pd9: 0;
+    --pd10: 0;
+    --pd11: 0;
+    --pd12: 0;
+    --pd13: 0;
+    --pd14: 0;
+    --pd15: 0;
+    --pd16: 0;
+    --pd17: 0;
+    --pd18: 0;
+    --pd19: 0;
+    --pd20: 0;
+    --pd21: 0;
+}
+:root{
+    --cart-display: none;
+}
+#cart{
+    display: var(--cart-display);
+    position: fixed;
+    width: fit-content;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 15px;
+    margin-left: calc(92vw - 120px - 95px);
+    z-index: 999;
+    overflow: scroll;
+    border-radius: 15px;
+}
+#cart-box{
+    width: 240px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.pd{
+    width: 95%;
+    margin-left: 2.5%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: whitesmoke;
+}
+.pd img{
+    position: absolute;
+    height: 50px;
+    padding: 15px 0 0 10px;
+}
+.info{
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 18px;
+}
+.info p{
+    height: fit-content;
+}
+.info-price{
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 0px;
+    color: #FF8F8F;
+}
+.info-name{
+    font-size: 18px;
+    margin-left: auto;
+    margin-bottom: 7px;
+    margin-right: -4px;
+    font-size: 10px;
+}
+.value{
+width: 20px;
+height: 20px;
+background-color: whitesmoke;
+border: none;
+padding: 0;
+text-align: right;
+}
+.value-adjust{
+    margin-right: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    top: -50px;
+}
+.value-adjust button{
+    width: 20px;
+    height: 10px;
+    border: none;
+    padding: 0;
+    margin-top: 0;
+}
+.up{
+    border-radius: 3px 3px 0 0;
+    background-color: #508D69;
+}
+.down{
+    border-radius: 0 0 3px 3px;
+    background-color: #FF8F8F;
+    top: -10px;
+}
+#sum{
+    position: fixed;
+    width: 150px;
+    height: fit-content;
+    font-size: 10px;
+    border-radius: 5px;
+    text-align: right;
+    color: whitesmoke;
+    background-color: #40A4FF;
+    margin-left: 90px;
+    margin-top: 410px;
+}
+#sum div{
+    padding: 2px 4px 2px 4px;
+}
+#pay{
+    position: fixed;
+    height: fit-content;
+    font-size: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: whitesmoke;
+    background-color: greenyellow;
+    color: black;
+    margin-left: 10px;
+    margin-top: 400px;
+}
+#pay a button{
+    position: fixed;
+    width: 70px;
+    height: fit-content;
+    font-size: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: whitesmoke;
+    background-color: greenyellow;
+    color: black;
+}
